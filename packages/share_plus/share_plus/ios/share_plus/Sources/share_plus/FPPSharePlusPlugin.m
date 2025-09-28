@@ -78,7 +78,9 @@ static void initializeActivityTypeMapping(void) {
           UIActivityTypeCollaborationCopyLink;
     }
     if (@available(iOS 16.4, *)) {
+      #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 160400
       originalTypes[@"addToHomeScreen"] = UIActivityTypeAddToHomeScreen;
+      #endif
     }
     activityTypes = originalTypes;
   });
